@@ -52,6 +52,7 @@ struct Character: Codable {
     let thumbnail : Thumbnail?
     let resourceURI : String?
     let comics : CharacterComics?
+    
 }
 
 struct CharacterComics : Codable {
@@ -71,6 +72,10 @@ struct Thumbnail : Codable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         path = try values.decodeIfPresent(String.self, forKey: .path)
         fileExtension = try values.decodeIfPresent(String.self, forKey: .fileExtension)
+    }
+    
+    var characterImage: String {
+        "\(path ?? "").\(fileExtension ?? "")"
     }
 
 }
