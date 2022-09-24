@@ -8,12 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		FF44649328DF5F5F000C9451 /* comic_book_swiftuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF44649228DF5F5F000C9451 /* comic_book_swiftuiApp.swift */; };
-		FF44649528DF5F5F000C9451 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF44649428DF5F5F000C9451 /* ContentView.swift */; };
+		FF44649528DF5F5F000C9451 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF44649428DF5F5F000C9451 /* HomeView.swift */; };
 		FF44649728DF5F60000C9451 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF44649628DF5F60000C9451 /* Assets.xcassets */; };
 		FF44649A28DF5F60000C9451 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF44649928DF5F60000C9451 /* Preview Assets.xcassets */; };
 		FF4464A428DF5F60000C9451 /* comic_book_swiftuiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4464A328DF5F60000C9451 /* comic_book_swiftuiTests.swift */; };
 		FF4464AE28DF5F60000C9451 /* comic_book_swiftuiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4464AD28DF5F60000C9451 /* comic_book_swiftuiUITests.swift */; };
 		FF4464B028DF5F60000C9451 /* comic_book_swiftuiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4464AF28DF5F60000C9451 /* comic_book_swiftuiUITestsLaunchTests.swift */; };
+		FF4464BE28DF603E000C9451 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4464BD28DF603E000C9451 /* Endpoint.swift */; };
+		FF4464C028DF6067000C9451 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4464BF28DF6067000C9451 /* HTTPClient.swift */; };
+		FF4464C228DF608C000C9451 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4464C128DF608C000C9451 /* RequestError.swift */; };
+		FF4464C528DF60C3000C9451 /* CharacterRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4464C428DF60C3000C9451 /* CharacterRoot.swift */; };
+		FF4464CA28DF61F5000C9451 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4464C928DF61F5000C9451 /* HomeService.swift */; };
+		FF4464CE28DF64BC000C9451 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4464CD28DF64BC000C9451 /* Configuration.swift */; };
+		FF4464D228DF6797000C9451 /* Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4464D128DF6797000C9451 /* Hash.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +43,7 @@
 /* Begin PBXFileReference section */
 		FF44648F28DF5F5F000C9451 /* comic-book-swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "comic-book-swiftui.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF44649228DF5F5F000C9451 /* comic_book_swiftuiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = comic_book_swiftuiApp.swift; sourceTree = "<group>"; };
-		FF44649428DF5F5F000C9451 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FF44649428DF5F5F000C9451 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		FF44649628DF5F60000C9451 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF44649928DF5F60000C9451 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FF44649F28DF5F60000C9451 /* comic-book-swiftuiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "comic-book-swiftuiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +51,14 @@
 		FF4464A928DF5F60000C9451 /* comic-book-swiftuiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "comic-book-swiftuiUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF4464AD28DF5F60000C9451 /* comic_book_swiftuiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = comic_book_swiftuiUITests.swift; sourceTree = "<group>"; };
 		FF4464AF28DF5F60000C9451 /* comic_book_swiftuiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = comic_book_swiftuiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FF4464BD28DF603E000C9451 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		FF4464BF28DF6067000C9451 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		FF4464C128DF608C000C9451 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		FF4464C428DF60C3000C9451 /* CharacterRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRoot.swift; sourceTree = "<group>"; };
+		FF4464C928DF61F5000C9451 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		FF4464CB28DF633D000C9451 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF4464CD28DF64BC000C9451 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		FF4464D128DF6797000C9451 /* Hash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hash.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +109,10 @@
 		FF44649128DF5F5F000C9451 /* comic-book-swiftui */ = {
 			isa = PBXGroup;
 			children = (
+				FF4464D028DF64E4000C9451 /* Core */,
+				FF4464CF28DF64D3000C9451 /* Resources */,
+				FF4464C628DF614C000C9451 /* Home */,
 				FF44649228DF5F5F000C9451 /* comic_book_swiftuiApp.swift */,
-				FF44649428DF5F5F000C9451 /* ContentView.swift */,
-				FF44649628DF5F60000C9451 /* Assets.xcassets */,
 				FF44649828DF5F60000C9451 /* Preview Content */,
 			);
 			path = "comic-book-swiftui";
@@ -125,6 +141,77 @@
 				FF4464AF28DF5F60000C9451 /* comic_book_swiftuiUITestsLaunchTests.swift */,
 			);
 			path = "comic-book-swiftuiUITests";
+			sourceTree = "<group>";
+		};
+		FF4464BC28DF5FC1000C9451 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FF4464BD28DF603E000C9451 /* Endpoint.swift */,
+				FF4464BF28DF6067000C9451 /* HTTPClient.swift */,
+				FF4464C128DF608C000C9451 /* RequestError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FF4464C328DF60B9000C9451 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FF4464C428DF60C3000C9451 /* CharacterRoot.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FF4464C628DF614C000C9451 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FF4464C828DF619D000C9451 /* Service */,
+				FF4464C728DF6195000C9451 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FF4464C728DF6195000C9451 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF44649428DF5F5F000C9451 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FF4464C828DF619D000C9451 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FF4464C928DF61F5000C9451 /* HomeService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		FF4464CC28DF64AE000C9451 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				FF4464CD28DF64BC000C9451 /* Configuration.swift */,
+				FF4464D128DF6797000C9451 /* Hash.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		FF4464CF28DF64D3000C9451 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FF44649628DF5F60000C9451 /* Assets.xcassets */,
+				FF4464CB28DF633D000C9451 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FF4464D028DF64E4000C9451 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FF4464BC28DF5FC1000C9451 /* Network */,
+				FF4464C328DF60B9000C9451 /* Models */,
+				FF4464CC28DF64AE000C9451 /* Config */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +344,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF44649528DF5F5F000C9451 /* ContentView.swift in Sources */,
+				FF4464CA28DF61F5000C9451 /* HomeService.swift in Sources */,
+				FF44649528DF5F5F000C9451 /* HomeView.swift in Sources */,
+				FF4464C228DF608C000C9451 /* RequestError.swift in Sources */,
+				FF4464BE28DF603E000C9451 /* Endpoint.swift in Sources */,
+				FF4464C528DF60C3000C9451 /* CharacterRoot.swift in Sources */,
+				FF4464D228DF6797000C9451 /* Hash.swift in Sources */,
+				FF4464C028DF6067000C9451 /* HTTPClient.swift in Sources */,
+				FF4464CE28DF64BC000C9451 /* Configuration.swift in Sources */,
 				FF44649328DF5F5F000C9451 /* comic_book_swiftuiApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,6 +393,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				API_KEY = 452b2ec51923e10bdf4c22421a862607;
+				API_KEY_PRIVATE = 62506b06c5b697839092ca6eac02e1d8f23683db;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -359,6 +455,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				API_KEY = 452b2ec51923e10bdf4c22421a862607;
+				API_KEY_PRIVATE = 62506b06c5b697839092ca6eac02e1d8f23683db;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -412,6 +510,8 @@
 		FF4464B428DF5F60000C9451 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				API_KEY = "";
+				API_KEY_PRIVATE = "";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -420,6 +520,7 @@
 				DEVELOPMENT_TEAM = 877F6QXPAM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "comic-book-swiftui/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -441,6 +542,8 @@
 		FF4464B528DF5F60000C9451 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				API_KEY = "";
+				API_KEY_PRIVATE = "";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -449,6 +552,7 @@
 				DEVELOPMENT_TEAM = 877F6QXPAM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "comic-book-swiftui/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
