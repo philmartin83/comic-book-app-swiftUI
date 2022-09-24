@@ -23,6 +23,7 @@
 		FF4464D228DF6797000C9451 /* Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4464D128DF6797000C9451 /* Hash.swift */; };
 		FF4464D528DF6F77000C9451 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4464D428DF6F77000C9451 /* HomeViewModel.swift */; };
 		FF4464D928DF7202000C9451 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4464D828DF7202000C9451 /* StringConstants.swift */; };
+		FF4464DF28DF832C000C9451 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FF4464DE28DF832C000C9451 /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF4464DF28DF832C000C9451 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +255,7 @@
 			);
 			name = "comic-book-swiftui";
 			packageProductDependencies = (
+				FF4464DE28DF832C000C9451 /* SDWebImageSwiftUI */,
 			);
 			productName = "comic-book-swiftui";
 			productReference = FF44648F28DF5F5F000C9451 /* comic-book-swiftui.app */;
@@ -327,6 +330,7 @@
 			);
 			mainGroup = FF44648628DF5F5F000C9451;
 			packageReferences = (
+				FF4464DD28DF832C000C9451 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = FF44649028DF5F5F000C9451 /* Products */;
 			projectDirPath = "";
@@ -715,6 +719,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FF4464DD28DF832C000C9451 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FF4464DE28DF832C000C9451 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF4464DD28DF832C000C9451 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FF44648728DF5F5F000C9451 /* Project object */;
 }
