@@ -45,7 +45,7 @@ struct CharacterDataSource : Codable {
 }
 
 struct Character: Codable {
-    let id : Int?
+    let id : Int
     let name : String?
     let description : String?
     let modified : String?
@@ -59,24 +59,4 @@ struct CharacterComics : Codable {
     let collectionURI : String?
 }
 
-struct Thumbnail : Codable {
-    let path : String?
-    let fileExtension : String?
-
-    enum CodingKeys: String, CodingKey {
-        case path
-        case fileExtension = "extension"
-    }
-
-    init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        path = try values.decodeIfPresent(String.self, forKey: .path)
-        fileExtension = try values.decodeIfPresent(String.self, forKey: .fileExtension)
-    }
-    
-    var characterImage: String {
-        "\(path ?? "").\(fileExtension ?? "")"
-    }
-
-}
 

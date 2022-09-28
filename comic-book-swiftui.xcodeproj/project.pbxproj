@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF2DBA6528E4DF0E00C7DD16 /* DetailSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2DBA6428E4DF0E00C7DD16 /* DetailSectionHeader.swift */; };
+		FF2DBA6828E4E24A00C7DD16 /* DetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2DBA6728E4E24A00C7DD16 /* DetailService.swift */; };
+		FF2DBA6C28E4E3AE00C7DD16 /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2DBA6B28E4E3AE00C7DD16 /* Comic.swift */; };
+		FF2DBA6E28E4E42D00C7DD16 /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2DBA6D28E4E42D00C7DD16 /* Thumbnail.swift */; };
+		FF2DBA7028E4E47200C7DD16 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2DBA6F28E4E47200C7DD16 /* DetailViewModel.swift */; };
 		FF44649328DF5F5F000C9451 /* comic_book_swiftuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF44649228DF5F5F000C9451 /* comic_book_swiftuiApp.swift */; };
 		FF44649528DF5F5F000C9451 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF44649428DF5F5F000C9451 /* HomeView.swift */; };
 		FF44649728DF5F60000C9451 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF44649628DF5F60000C9451 /* Assets.xcassets */; };
@@ -24,6 +29,7 @@
 		FF4464D528DF6F77000C9451 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4464D428DF6F77000C9451 /* HomeViewModel.swift */; };
 		FF4464D928DF7202000C9451 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4464D828DF7202000C9451 /* StringConstants.swift */; };
 		FF4464DF28DF832C000C9451 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FF4464DE28DF832C000C9451 /* SDWebImageSwiftUI */; };
+		FFB8B39C28E4BB4800954C28 /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB8B39B28E4BB4800954C28 /* CharacterDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +50,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FF2DBA6428E4DF0E00C7DD16 /* DetailSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSectionHeader.swift; sourceTree = "<group>"; };
+		FF2DBA6728E4E24A00C7DD16 /* DetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailService.swift; sourceTree = "<group>"; };
+		FF2DBA6B28E4E3AE00C7DD16 /* Comic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
+		FF2DBA6D28E4E42D00C7DD16 /* Thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
+		FF2DBA6F28E4E47200C7DD16 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		FF44648F28DF5F5F000C9451 /* comic-book-swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "comic-book-swiftui.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF44649228DF5F5F000C9451 /* comic_book_swiftuiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = comic_book_swiftuiApp.swift; sourceTree = "<group>"; };
 		FF44649428DF5F5F000C9451 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -64,6 +75,7 @@
 		FF4464D128DF6797000C9451 /* Hash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hash.swift; sourceTree = "<group>"; };
 		FF4464D428DF6F77000C9451 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		FF4464D828DF7202000C9451 /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
+		FFB8B39B28E4BB4800954C28 /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +104,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF2DBA6228E4DEF500C7DD16 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FFB8B39B28E4BB4800954C28 /* CharacterDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FF2DBA6328E4DEFE00C7DD16 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FF2DBA6428E4DF0E00C7DD16 /* DetailSectionHeader.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		FF2DBA6628E4E18300C7DD16 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FF2DBA6728E4E24A00C7DD16 /* DetailService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		FF2DBA6928E4E36200C7DD16 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FF2DBA6F28E4E47200C7DD16 /* DetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		FF44648628DF5F5F000C9451 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +159,7 @@
 		FF44649128DF5F5F000C9451 /* comic-book-swiftui */ = {
 			isa = PBXGroup;
 			children = (
+				FFB8B39A28E4BB2800954C28 /* Detail */,
 				FF4464D028DF64E4000C9451 /* Core */,
 				FF4464CF28DF64D3000C9451 /* Resources */,
 				FF4464C628DF614C000C9451 /* Home */,
@@ -163,7 +208,9 @@
 		FF4464C328DF60B9000C9451 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FF2DBA6B28E4E3AE00C7DD16 /* Comic.swift */,
 				FF4464C428DF60C3000C9451 /* CharacterRoot.swift */,
+				FF2DBA6D28E4E42D00C7DD16 /* Thumbnail.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -236,6 +283,17 @@
 				FF4464D828DF7202000C9451 /* StringConstants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		FFB8B39A28E4BB2800954C28 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				FF2DBA6928E4E36200C7DD16 /* ViewModel */,
+				FF2DBA6628E4E18300C7DD16 /* Service */,
+				FF2DBA6328E4DEFE00C7DD16 /* Components */,
+				FF2DBA6228E4DEF500C7DD16 /* View */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,17 +432,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF2DBA7028E4E47200C7DD16 /* DetailViewModel.swift in Sources */,
 				FF4464D928DF7202000C9451 /* StringConstants.swift in Sources */,
 				FF4464CA28DF61F5000C9451 /* HomeService.swift in Sources */,
 				FF44649528DF5F5F000C9451 /* HomeView.swift in Sources */,
+				FFB8B39C28E4BB4800954C28 /* CharacterDetailView.swift in Sources */,
 				FF4464C228DF608C000C9451 /* RequestError.swift in Sources */,
 				FF4464D528DF6F77000C9451 /* HomeViewModel.swift in Sources */,
 				FF4464BE28DF603E000C9451 /* Endpoint.swift in Sources */,
+				FF2DBA6C28E4E3AE00C7DD16 /* Comic.swift in Sources */,
 				FF4464C528DF60C3000C9451 /* CharacterRoot.swift in Sources */,
 				FF4464D228DF6797000C9451 /* Hash.swift in Sources */,
+				FF2DBA6828E4E24A00C7DD16 /* DetailService.swift in Sources */,
 				FF4464C028DF6067000C9451 /* HTTPClient.swift in Sources */,
 				FF4464CE28DF64BC000C9451 /* Configuration.swift in Sources */,
 				FF44649328DF5F5F000C9451 /* comic_book_swiftuiApp.swift in Sources */,
+				FF2DBA6E28E4E42D00C7DD16 /* Thumbnail.swift in Sources */,
+				FF2DBA6528E4DF0E00C7DD16 /* DetailSectionHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

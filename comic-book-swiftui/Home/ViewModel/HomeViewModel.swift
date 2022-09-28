@@ -13,14 +13,14 @@ class HomeViewModel: ObservableObject, HTTPClient {
     @Published var errorMessage = ""
     
     @MainActor
-    func fetchCharacters() {
+    func fetchCharacters(pageNumber: Int) {
         Task {
-            let result = await getAllCharacters()
+            let result = await getAllCharacters(pageNumber: pageNumber)
             switch result {
             case .success(let model):
-                self.characters = model.apiDataSource?.characters ?? []
+                self.characters.append(contentsOf: model.apiDataSource?.characters ?? [])
             case .failure(let error):
-                self.errorMessage = error.localizedDescription
+                self.errorMessage = error.customMessage
             }
         }
     }
@@ -29,8 +29,12 @@ class HomeViewModel: ObservableObject, HTTPClient {
         errorMessage = StringConstants.emptyString
     }
     
-    private func getAllCharacters() async -> Result<CharacterRoot, RequestError> {
-        return await sendRequest(endpoint: CharacterEndpoint.getAllCharacters, responseModel: CharacterRoot.self)
+    func shouldFetchData(id: Int) -> Bool {
+        return id == characters.count-2
+    }
+    
+    private func getAllCharacters(pageNumber: Int) async -> Result<CharacterRoot, RequestError> {
+        return await sendRequest(endpoint: HomeEndpoint.getAllCharacters(pageNumber: pageNumber), responseModel: CharacterRoot.self)
     }
 }
 

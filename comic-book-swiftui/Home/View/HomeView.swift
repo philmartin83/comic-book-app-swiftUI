@@ -6,47 +6,62 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct HomeView: View {
     
-    @StateObject var vm = HomeViewModel()
+    @StateObject private var vm = HomeViewModel()
+    @State private var pageNumber: Int = 0
     
     let columns = [
         GridItem(.flexible())
     ]
     
     var body: some View {
-        VStack {
-            HStack {
-                Text("Comicbook App")
-                    .foregroundColor(.white)
-                    .shadow(color: .black, radius: 0, x: 1, y: 1)
-                Spacer()
-            }
-            .padding()
-            .background(.red)
-            
-            ScrollView {
-                LazyVGrid(columns: columns) {
-                    ForEach(vm.characters, id: \.id) { character in
-                        VStack {
-                            AsyncImage(url: URL(string: character.thumbnail?.characterImage ?? "")!) { image in
-                                image.resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .overlay(ImageOverlay(name: character.name ?? ""), alignment: .bottomTrailing)
-                            } placeholder: {
-                                ProgressView()
+        NavigationView {
+            VStack {
+                HStack {
+                    Text("Comicbook App")
+                        .font(.title2)
+                        .foregroundColor(.white)
+                        .shadow(color: .black, radius: 0, x: 1, y: 1)
+                    Spacer()
+                }
+                .padding()
+                .background(.red)
+                
+                ScrollView {
+                    LazyVGrid(columns: columns) {
+                        ForEach(vm.characters, id: \.id) { character in
+                            VStack {
+                                NavigationLink(destination: CharacterDetailView(character: character), label: {
+                                    WebImage(url: URL(string: character.thumbnail?.characterImage ?? "")!)
+                                        .resizable() // Resizable like
+                                        .indicator(.activity) // Activity Indicator
+                                        .transition(.fade(duration: 0.5)) // Fade Transition with duration
+                                        .scaledToFit()
+                                        .overlay(ImageOverlay(name: character.name ?? ""), alignment: .bottomTrailing)
+                                        .onAppear{
+                                            guard let index = vm.characters.firstIndex(where: {$0.id == character.id}) else {return}
+                                            if vm.shouldFetchData(id: index) {
+                                                pageNumber += 1
+                                                vm.fetchCharacters(pageNumber: pageNumber)
+                                            }
+                                           
+                                        }
+                                })
                             }
+                            .frame(minHeight: 100)
+                            .cornerRadius(8)
+                            .padding([.leading, .trailing])
                         }
-                        .frame(minHeight: 100)
-                        .cornerRadius(8)
-                        .padding()
                     }
                 }
             }
         }
+        .navigationBarHidden(true)
         .onAppear{
-            vm.fetchCharacters()
+            vm.fetchCharacters(pageNumber: pageNumber)
         }
     }
     

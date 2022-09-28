@@ -1,0 +1,86 @@
+//
+//  CharacterDetailView.swift
+//  comic-book-swiftui
+//
+//  Created by Phil Martin on 28/09/2022.
+//
+
+import SwiftUI
+import SDWebImageSwiftUI
+
+struct CharacterDetailView: View {
+    
+    @Environment(\.presentationMode) var presentation
+    
+    var character: Character
+    @StateObject private var vm = DetailViewModel()
+    
+    var body: some View {
+        VStack {
+            HStack {
+                Button {
+                    presentation.wrappedValue.dismiss()
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(.white)
+                        .font(.system(size: 25))
+                    Text("Character Detail")
+                        .foregroundColor(.white)
+                        .font(.title2)
+                        .padding(.leading, 10)
+                        .shadow(color: .black, radius: 0, x: 1, y: 1)
+                    Spacer()
+                }
+
+                Spacer()
+            }
+            .padding()
+            .background(.red)
+            ScrollView {
+                VStack {
+                    HStack {
+                        WebImage(url: URL(string: character.thumbnail?.characterImage ?? "")!)
+                            .resizable() // Resizable like
+                            .indicator(.activity) // Activity Indicator
+                            .transition(.fade(duration: 0.5)) // Fade Transition with duration
+                            .scaledToFit()
+                            .clipShape(Circle())
+                            .frame(width: 100, height: 100)
+                            .shadow(color: .gray.opacity(0.7), radius: 0, x: 2, y: 2)
+                            .padding(.leading, 16)
+                            .padding(.top, 16)
+                        Text(character.name ?? "")
+                            .foregroundColor(.primary)
+                            .font(.title3)
+                            .padding(.leading, 20)
+                        Spacer()
+                        
+                    }
+                    DetailSectionHeader(title: "Character Bio")
+                
+                    Text(character.description?.isEmpty == true ? "No Bio" : character.description ?? "No Bio")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .foregroundColor(.primary)
+                        .padding()
+                    
+                    DetailSectionHeader(title: "Comics")
+                    
+                    ScrollView {
+                        LazyHStack {
+                            ForEach(vm.comics, id: \.id) { character in
+                                
+                            }
+                        }
+                    }
+                    
+                }
+            }.navigationBarHidden(true)
+        }
+    }
+}
+
+struct CharacterDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        CharacterDetailView(character: Character(id: 0, name: "", description: "", modified: "", thumbnail: nil, resourceURI: "", comics: nil))
+    }
+}
