@@ -24,6 +24,7 @@ struct CharacterDetailView: View {
                     Image(systemName: "chevron.left")
                         .foregroundColor(.white)
                         .font(.system(size: 25))
+                        .shadow(color: .black, radius: 0, x: 1, y: 1)
                     Text("Character Detail")
                         .foregroundColor(.white)
                         .font(.title2)
@@ -31,7 +32,7 @@ struct CharacterDetailView: View {
                         .shadow(color: .black, radius: 0, x: 1, y: 1)
                     Spacer()
                 }
-
+                
                 Spacer()
             }
             .padding()
@@ -39,11 +40,7 @@ struct CharacterDetailView: View {
             ScrollView {
                 VStack {
                     HStack {
-                        WebImage(url: URL(string: character.thumbnail?.characterImage ?? "")!)
-                            .resizable() // Resizable like
-                            .indicator(.activity) // Activity Indicator
-                            .transition(.fade(duration: 0.5)) // Fade Transition with duration
-                            .scaledToFit()
+                        CharacterCardView(character: character)
                             .clipShape(Circle())
                             .frame(width: 100, height: 100)
                             .shadow(color: .gray.opacity(0.7), radius: 0, x: 2, y: 2)
@@ -57,7 +54,7 @@ struct CharacterDetailView: View {
                         
                     }
                     DetailSectionHeader(title: "Character Bio")
-                
+                    
                     Text(character.description?.isEmpty == true ? "No Bio" : character.description ?? "No Bio")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .foregroundColor(.primary)
@@ -65,16 +62,20 @@ struct CharacterDetailView: View {
                     
                     DetailSectionHeader(title: "Comics")
                     
-                    ScrollView {
+                    ScrollView(.horizontal) {
                         LazyHStack {
-                            ForEach(vm.comics, id: \.id) { character in
-                                
+                            ForEach(vm.comics, id: \.id) { comic in
+                                ComicBookCard(comic: comic)
+                                    .frame(idealWidth: 150, maxWidth: 150, maxHeight: .infinity)
                             }
                         }
-                    }
+                    }.scrollIndicators(.hidden)
                     
                 }
             }.navigationBarHidden(true)
+            .onAppear{
+                vm.getComicsForCharacter(id: character.id)
+            }
         }
     }
 }

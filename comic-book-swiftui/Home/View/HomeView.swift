@@ -12,6 +12,8 @@ struct HomeView: View {
     
     @StateObject private var vm = HomeViewModel()
     @State private var pageNumber: Int = 0
+    @State private var pagingFetch = false
+    @State private var firstFetch = true
     
     let columns = [
         GridItem(.flexible())
@@ -30,36 +32,56 @@ struct HomeView: View {
                 .padding()
                 .background(.red)
                 
-                ScrollView {
-                    LazyVGrid(columns: columns) {
-                        ForEach(vm.characters, id: \.id) { character in
-                            VStack {
-                                NavigationLink(destination: CharacterDetailView(character: character), label: {
-                                    WebImage(url: URL(string: character.thumbnail?.characterImage ?? "")!)
-                                        .resizable() // Resizable like
-                                        .indicator(.activity) // Activity Indicator
-                                        .transition(.fade(duration: 0.5)) // Fade Transition with duration
-                                        .scaledToFit()
-                                        .overlay(ImageOverlay(name: character.name ?? ""), alignment: .bottomTrailing)
-                                        .onAppear{
-                                            guard let index = vm.characters.firstIndex(where: {$0.id == character.id}) else {return}
-                                            if vm.shouldFetchData(id: index) {
-                                                pageNumber += 1
-                                                vm.fetchCharacters(pageNumber: pageNumber)
+                if firstFetch {
+                    Spacer()
+                    ProgressView()
+                        .tint(.red)
+                        .scaleEffect(2)
+                    Spacer()
+              
+                } else {
+                    ScrollView {
+                        LazyVGrid(columns: columns) {
+                            ForEach(vm.characters, id: \.id) { character in
+                                VStack {
+                                    NavigationLink(destination: CharacterDetailView(character: character), label: {
+                                        CharacterCardView(character: character)
+                                            .overlay(ImageOverlay(name: character.name ?? ""), alignment: .bottomTrailing)
+                                            .onAppear{
+                                                guard let index = vm.characters.firstIndex(where: {$0.id == character.id}) else {return}
+                                                if vm.shouldFetchData(id: index) {
+                                                    vm.pagingFetch = true
+                                                    pageNumber += 1
+                                                    vm.fetchCharacters(pageNumber: pageNumber)
+                                                }
+                                                
                                             }
-                                           
-                                        }
-                                })
+                                        
+                                    })
+                                }
+                                .frame(minHeight: 100)
+                                .cornerRadius(8)
+                                .padding(.leading, 5)
+                                .padding(.trailing, 5)
+                                .onChange(of: vm.pagingFetch) { newValue in
+                                    pagingFetch = newValue
+                                }
+                                if pagingFetch {
+                                    ProgressView()
+                                        .scaleEffect(1)
+                                        .foregroundColor(.red)
+                                }
                             }
-                            .frame(minHeight: 100)
-                            .cornerRadius(8)
-                            .padding([.leading, .trailing])
                         }
+                        
                     }
                 }
             }
         }
         .navigationBarHidden(true)
+        .onChange(of: vm.firstFetch, perform: { newValue in
+            firstFetch = newValue
+        })
         .onAppear{
             vm.fetchCharacters(pageNumber: pageNumber)
         }

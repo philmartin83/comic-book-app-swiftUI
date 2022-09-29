@@ -11,6 +11,8 @@ class HomeViewModel: ObservableObject, HTTPClient {
     
     @Published var characters: [Character] = []
     @Published var errorMessage = ""
+    @Published var firstFetch = true
+    @Published var pagingFetch = false
     
     @MainActor
     func fetchCharacters(pageNumber: Int) {
@@ -22,6 +24,12 @@ class HomeViewModel: ObservableObject, HTTPClient {
             case .failure(let error):
                 self.errorMessage = error.customMessage
             }
+            if pageNumber == 0 {
+                firstFetch = false
+            }else {
+                pagingFetch = false
+            }
+                
         }
     }
     

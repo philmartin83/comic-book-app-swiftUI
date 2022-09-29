@@ -50,8 +50,5 @@ struct Comic: Codable {
         pageCount = try values.decodeIfPresent(Int.self, forKey: .pageCount)
         title = try values.decodeIfPresent(String.self, forKey: .title)
         description = try values.decodeIfPresent(String.self, forKey: .description)
-    }
-    
-    var 
-    
+    }    
 }
