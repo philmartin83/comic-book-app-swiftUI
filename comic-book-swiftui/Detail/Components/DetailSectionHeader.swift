@@ -15,6 +15,7 @@ struct DetailSectionHeader: View {
         Text(title)
             .frame(maxWidth: .infinity, alignment: .leading)
             .font(.title3)
+            .foregroundColor(.white)
             .padding()
             .background(.red)
             .shadow(color: .black, radius: 0, x: 1, y: 1)
