@@ -13,7 +13,7 @@ struct CharacterCardView: View {
     var character: Character
     
     var body: some View {
-        WebImage(url: URL(string: character.thumbnail?.characterImage ?? "")!)
+        AnimatedImage(url: URL(string: character.thumbnail?.characterImage ?? "")!)
             .resizable() // Resizable like
             .indicator(.activity) // Activity Indicator
             .transition(.fade(duration: 0.5)) // Fade Transition with duration

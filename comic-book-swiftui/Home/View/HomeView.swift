@@ -15,15 +15,11 @@ struct HomeView: View {
     @State private var pagingFetch = false
     @State private var firstFetch = true
     
-    let columns = [
-        GridItem(.flexible())
-    ]
-    
     var body: some View {
         NavigationView {
             VStack {
                 HStack {
-                    Text("Comicbook App")
+                    Text(StringConstants.characterHomeScreenTitle)
                         .font(.title2)
                         .foregroundColor(.white)
                         .shadow(color: .black, radius: 0, x: 1, y: 1)
@@ -41,7 +37,7 @@ struct HomeView: View {
               
                 } else {
                     ScrollView {
-                        LazyVGrid(columns: columns) {
+                        LazyVStack{
                             ForEach(vm.characters, id: \.id) { character in
                                 VStack {
                                     NavigationLink(destination: CharacterDetailView(character: character), label: {
@@ -84,22 +80,6 @@ struct HomeView: View {
         })
         .onAppear{
             vm.fetchCharacters(pageNumber: pageNumber)
-        }
-    }
-    
-    struct ImageOverlay: View {
-        var name = ""
-        var body: some View {
-            ZStack {
-                Text("\(name)")
-                    .font(.callout)
-                    .padding(6)
-                    .foregroundColor(.white)
-            }
-            .background(.black)
-            .opacity(0.8)
-            .cornerRadius(8)
-            .padding(6)
         }
     }
 }

@@ -14,7 +14,7 @@ struct ComicBookCard: View {
     
     var body: some View {
         VStack {
-            WebImage(url: URL(string: comic.cover?.characterImage ?? "")!)
+            AnimatedImage(url: URL(string: comic.cover?.characterImage ?? "")!)
                 .resizable() // Resizable like
                 .indicator(.activity) // Activity Indicator
                 .transition(.fade(duration: 0.5)) // Fade Transition with duration

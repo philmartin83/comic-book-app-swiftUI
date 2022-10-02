@@ -14,6 +14,7 @@ struct CharacterDetailView: View {
     
     var character: Character
     @StateObject private var vm = DetailViewModel()
+    private let noBio = StringConstants.noBio
     
     var body: some View {
         VStack {
@@ -25,7 +26,7 @@ struct CharacterDetailView: View {
                         .foregroundColor(.white)
                         .font(.system(size: 25))
                         .shadow(color: .black, radius: 0, x: 1, y: 1)
-                    Text("Character Detail")
+                    Text(StringConstants.characterDetailTitle)
                         .foregroundColor(.white)
                         .font(.title2)
                         .padding(.leading, 10)
@@ -53,14 +54,14 @@ struct CharacterDetailView: View {
                         Spacer()
                         
                     }
-                    DetailSectionHeader(title: "Character Bio")
+                    DetailSectionHeader(title: StringConstants.characterBioSectionHeaderTitle)
                     
-                    Text(character.description?.isEmpty == true ? "No Bio" : character.description ?? "No Bio")
+                    Text(character.description?.isEmpty == true ? noBio : character.description ?? noBio )
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .foregroundColor(.primary)
                         .padding()
                     
-                    DetailSectionHeader(title: "Comics")
+                    DetailSectionHeader(title: StringConstants.characterComicsSectionHeaderTitle)
                     
                     ScrollView(.horizontal) {
                         LazyHStack {

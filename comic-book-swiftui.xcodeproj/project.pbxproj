@@ -14,6 +14,7 @@
 		FF2DBA7028E4E47200C7DD16 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2DBA6F28E4E47200C7DD16 /* DetailViewModel.swift */; };
 		FF2DBA7528E4E7BF00C7DD16 /* CharacterCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2DBA7428E4E7BF00C7DD16 /* CharacterCardView.swift */; };
 		FF2DBA7728E4E87E00C7DD16 /* ComicBookCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2DBA7628E4E87E00C7DD16 /* ComicBookCard.swift */; };
+		FF2ED7DF28E9F40000DCBE07 /* ImageOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2ED7DE28E9F40000DCBE07 /* ImageOverlay.swift */; };
 		FF44649328DF5F5F000C9451 /* comic_book_swiftuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF44649228DF5F5F000C9451 /* comic_book_swiftuiApp.swift */; };
 		FF44649528DF5F5F000C9451 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF44649428DF5F5F000C9451 /* HomeView.swift */; };
 		FF44649728DF5F60000C9451 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF44649628DF5F60000C9451 /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		FF2DBA6F28E4E47200C7DD16 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		FF2DBA7428E4E7BF00C7DD16 /* CharacterCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCardView.swift; sourceTree = "<group>"; };
 		FF2DBA7628E4E87E00C7DD16 /* ComicBookCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicBookCard.swift; sourceTree = "<group>"; };
+		FF2ED7DE28E9F40000DCBE07 /* ImageOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOverlay.swift; sourceTree = "<group>"; };
 		FF44648F28DF5F5F000C9451 /* comic-book-swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "comic-book-swiftui.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF44649228DF5F5F000C9451 /* comic_book_swiftuiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = comic_book_swiftuiApp.swift; sourceTree = "<group>"; };
 		FF44649428DF5F5F000C9451 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -116,14 +118,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		FF2DBA6328E4DEFE00C7DD16 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				FF2DBA6428E4DF0E00C7DD16 /* DetailSectionHeader.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		FF2DBA6628E4E18300C7DD16 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,8 +137,10 @@
 		FF2DBA7328E4E7A800C7DD16 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				FF2DBA6428E4DF0E00C7DD16 /* DetailSectionHeader.swift */,
 				FF2DBA7628E4E87E00C7DD16 /* ComicBookCard.swift */,
 				FF2DBA7428E4E7BF00C7DD16 /* CharacterCardView.swift */,
+				FF2ED7DE28E9F40000DCBE07 /* ImageOverlay.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -304,7 +300,6 @@
 			children = (
 				FF2DBA6928E4E36200C7DD16 /* ViewModel */,
 				FF2DBA6628E4E18300C7DD16 /* Service */,
-				FF2DBA6328E4DEFE00C7DD16 /* Components */,
 				FF2DBA6228E4DEF500C7DD16 /* View */,
 			);
 			path = Detail;
@@ -460,6 +455,7 @@
 				FF4464C528DF60C3000C9451 /* CharacterRoot.swift in Sources */,
 				FF4464D228DF6797000C9451 /* Hash.swift in Sources */,
 				FF2DBA6828E4E24A00C7DD16 /* DetailService.swift in Sources */,
+				FF2ED7DF28E9F40000DCBE07 /* ImageOverlay.swift in Sources */,
 				FF4464C028DF6067000C9451 /* HTTPClient.swift in Sources */,
 				FF4464CE28DF64BC000C9451 /* Configuration.swift in Sources */,
 				FF44649328DF5F5F000C9451 /* comic_book_swiftuiApp.swift in Sources */,
